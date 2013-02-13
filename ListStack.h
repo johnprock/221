@@ -113,7 +113,7 @@ Object&
 ListStack<Object>::top() throw(StackEmptyException) {
   if (isEmpty())
     throw StackEmptyException();
-  return m_head.m_element;
+  return m_head->m_element;
 }
 
 // push object onto the stack
@@ -128,9 +128,11 @@ ListStack<Object>::push(const Object& elem) {
 template <typename Object>
 Object
 ListStack<Object>::pop() throw(StackEmptyException) {
-  ////////////////////////////////////////////////////////////////
-  /* Complete this function using the list based implemenation. */
-  ////////////////////////////////////////////////////////////////
+  Object obj = m_head->m_element;
+  NodePtr temp = m_head;
+  m_head = m_head->m_next;
+  delete temp;
+  return obj;
 }
 
 #endif
