@@ -122,12 +122,18 @@ void
 ListStack<Object>::push(const Object& elem) {
   Node new_node =  new Node(elem, m_head);
   m_head = &new_node;
+
+  // fix pushing to an empty stack
 }
 
 // pop the stack
 template <typename Object>
 Object
 ListStack<Object>::pop() throw(StackEmptyException) {
+  if(m_head->m_next == NULL) { // stack only has one element
+    // fix this  
+  }
+
   Object obj = m_head->m_element;
   NodePtr temp = m_head;
   m_head = m_head->m_next;
