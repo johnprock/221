@@ -113,18 +113,15 @@ Object&
 ListStack<Object>::top() throw(StackEmptyException) {
   if (isEmpty())
     throw StackEmptyException();
-  ////////////////////////////////////////////////////////////////
-  /* Complete this function using the list based implemenation. */
-  ////////////////////////////////////////////////////////////////
+  return m_head.m_element;
 }
 
 // push object onto the stack
 template <typename Object>
 void
 ListStack<Object>::push(const Object& elem) {
-  ////////////////////////////////////////////////////////////////
-  /* Complete this function using the list based implemenation. */
-  ////////////////////////////////////////////////////////////////
+  Node new_node =  new Node(elem, m_head);
+  m_head = &new_node;
 }
 
 // pop the stack
