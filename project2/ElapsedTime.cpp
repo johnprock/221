@@ -1,30 +1,13 @@
-/*
- * This program demonstrates how to calculate the actual
- * processing time of a part of your program, say the 
- * execution time of function f(). The program uses the 
- * function clock(), the clock_t type, and the constant
- * CLOCKS_PER_SEC defined in the C++ standard library "ctime".
- */
+// Patrick Rock
+// CSCE 221H
 
-// be sure to include <ctime>
 #include<ctime>
 #include<iostream>
-#include "ListStack.h"
+#include"ListStack.h"
 
 using namespace std;
 
 int main() {
-
-  /*
-   * We use the clock() program in library <ctime>. Program clock()
-   * returns the number of clock ticks elapsed since the process 
-   * starts. The number of clock ticks is represented by type clock_t.
-   *
-   * If you wonder why we don't use time(), it's because time() 
-   * returns a value with a precision only to seconds.
-   */
-
-  /* record the number of elapsed ticks before calling f() */
   
   ListStack<int> stack = ListStack<int>();
   clock_t start = clock();
@@ -41,11 +24,14 @@ int main() {
    * (end - start) by CLOCKS_PER_SEC will give you the elapsed
    * time in seconds.
    */
+
   cout << "CPU elapsed time in seconds: "
     <<(double)(end - start)/CLOCKS_PER_SEC <<endl;
   cout << "Pop Stack: " << stack.pop() << '\n';
   return 0;
+
 }
+
 
 /* A way to improve the precision of measurement is to start
  * timing right after the clock ticks and also measure for many
