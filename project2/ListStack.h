@@ -129,6 +129,9 @@ ListStack<Object>::push(const Object& elem) {
 template <typename Object>
 Object
 ListStack<Object>::pop() throw(StackEmptyException) {
+  if (isEmpty())
+    throw StackEmptyException();
+	
   Object obj = m_head->m_element;
   NodePtr temp = m_head;
   m_head = m_head->m_next;
