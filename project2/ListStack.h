@@ -107,6 +107,7 @@ ListStack<Object>::operator=(const ListStack& st) {
 }
 
 // number of elements in the stack
+// bad implementation
 template <typename Object>
 size_t
 ListStack<Object>::mySize() {
