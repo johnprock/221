@@ -76,16 +76,16 @@ ListStack<Object>::ListStack(const ListStack& st) {
   while(!isEmpty()) {
     pop(); // clear out list and make new nodes
   }
-  m_size = st->m_size;
-  Node* iter1 = st->m_head; // for stepping through the old list
+  m_size = st.m_size;
+  Node* iter1 = st.m_head; // for stepping through the old list
   Node* iter2 = new Node(iter1->m_element); // for the new list
 
   for(int i=0; i<m_size; i++) {
     iter1 = iter1->m_next;
-    iter2->m_next = new Node(iter1->m_elem);
-    iter2 = iter2->next;
+    iter2->m_next = new Node(iter1->m_element);
+    iter2 = iter2->m_next;
   }
-  iter2->next = NULL;
+  iter2->m_next = NULL;
 }
 
 //destructor
@@ -135,8 +135,8 @@ ListStack<Object>::top() throw(StackEmptyException) {
 template <typename Object>
 void
 ListStack<Object>::push(const Object& elem) {
-  Node new_node =  new Node(elem, m_head);
-  m_head = &new_node;
+  Node* new_node =  new Node(elem, m_head);
+  m_head = new_node;
   m_size++;
 }
 

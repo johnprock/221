@@ -26,9 +26,11 @@ int main() {
 
   /* record the number of elapsed ticks before calling f() */
   
-  ListStack<int> stack;
+  ListStack<int> stack = ListStack<int>();
   clock_t start = clock();
-  
+  for(int i=0; i<10000000; i++) {
+    stack.push(10);  
+  }
   clock_t end = clock();
 
   /*
@@ -41,7 +43,7 @@ int main() {
    */
   cout << "CPU elapsed time in seconds: "
     <<(double)(end - start)/CLOCKS_PER_SEC <<endl;
-
+  cout << "Pop Stack: " << stack.pop() << '\n';
   return 0;
 }
 
