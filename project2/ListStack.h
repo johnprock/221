@@ -73,26 +73,33 @@ ListStack<Object>::ListStack() : m_head(NULL), m_size(0) {}
 //copy constructor
 template <typename Object>
 ListStack<Object>::ListStack(const ListStack& st) {
-  ////////////////////////////////////////////////////////////////
-  /* Complete this function using the list based implemenation. */
-  ////////////////////////////////////////////////////////////////
+  ~ListStack(); // this code creates all new node elements
+  m_size = st->m_size;
+  Node* iter1 = st->m_head; // for stepping through the old list
+  Node* iter2 = new Node(iter1->m_element); // for the new list
+
+  for(int i=0; i<m_size; i++) {
+    iter1 = iter1->m_next;
+    iter2->m_next = new Node(iter1->m_elem);
+    iter2 = iter2->next;
+  }
+  iter2->next = NULL;
 }
 
 //destructor
 template <typename Object>
 ListStack<Object>::~ListStack() { 
-  ////////////////////////////////////////////////////////////////
-  /* Complete this function using the list based implemenation. */
-  ////////////////////////////////////////////////////////////////
+  while(!isEmpty())
+    pop(); // popped nodes are deleted
 }
 
 //assignment operator
 template <typename Object>
 ListStack<Object>&
 ListStack<Object>::operator=(const ListStack& st) {
-  ////////////////////////////////////////////////////////////////
-  /* Complete this function using the list based implemenation. */
-  ////////////////////////////////////////////////////////////////
+  ~ListStack();
+  m_head = st->m_head;
+  m_size = st->m_size;
 }
 
 // number of elements in the stack
