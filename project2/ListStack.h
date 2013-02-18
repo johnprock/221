@@ -106,12 +106,16 @@ ListStack<Object>::operator=(const ListStack& st) {
 template <typename Object>
 size_t
 ListStack<Object>::mySize() {
-  /**************************************************************
-   *  Complete this function using only public methods
-   *  such as ListStack constructor, push(), pop() and isEmpty()
-   *  (but not size()) 
-   **************************************************************
-   */
+  ListStack temp = new ListStack();
+  int c = 0;
+  while(!isEmpty()) { // this reverses the order
+    temp.push(pop());
+    c++;
+  } 
+  while(!temp.isEmpty()) { // put elements back in order
+    push(temp.pop());
+  }
+  return c;
 }
 
 // return the top of the stack
