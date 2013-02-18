@@ -9,27 +9,56 @@ using namespace std;
 
 int main() {
   
-  ListStack<int> stack = ListStack<int>();
-  clock_t start = clock();
+//-------------------PUSH------------------//
+  ListStack<int> stack1 = ListStack<int>();
+  clock_t start1 = clock();
   for(int i=0; i<10000000; i++) {
-    stack.push(10);  
+    stack1.push(10);  
   }
-  clock_t end = clock();
 
-  /*
-   * The number of ticks elapsed during the f() function call 
-   * can be calculated by (end - start). The constant 
-   * CLOCKS_PER_SEC specifies the relation between a clock tick
-   * and a second (i.e. clock ticks per second). Therefore, dividing
-   * (end - start) by CLOCKS_PER_SEC will give you the elapsed
-   * time in seconds.
-   */
-
+  clock_t end1 = clock();
   cout << "CPU elapsed time in seconds: "
-    <<(double)(end - start)/CLOCKS_PER_SEC <<endl;
-  cout << "Pop Stack: " << stack.pop() << '\n';
-  return 0;
+    <<(double)(end1 - start1)/CLOCKS_PER_SEC <<endl;
+  cout << "Pop Stack: " << stack1.pop() << '\n';
 
+
+//------------------POP-------------------//
+  ListStack<int> stack2 = ListStack<int>();
+  clock_t start2 = clock();
+  for(int i=0; i<10000000; i++) {
+    stack2.push(10);  
+  }
+
+  clock_t end2 = clock();
+  cout << "CPU elapsed time in seconds: "
+    <<(double)(end2 - start2)/CLOCKS_PER_SEC <<endl;
+  cout << "Pop Stack: " << stack2.pop() << '\n';
+
+
+//------------------SIZE------------------//  
+  ListStack<int> stack3 = ListStack<int>();
+  clock_t start3 = clock();
+  for(int i=0; i<10000000; i++) {
+    stack3.push(10);  
+  }
+
+  clock_t end3 = clock();
+  cout << "CPU elapsed time in seconds: "
+    <<(double)(end3 - start3)/CLOCKS_PER_SEC <<endl;
+  cout << "Pop Stack: " << stack3.pop() << '\n';
+
+//----------------MY SIZE----------------//
+  ListStack<int> stack4 = ListStack<int>();
+  clock_t start4 = clock();
+  for(int i=0; i<10000000; i++) {
+    stack4.push(10);  
+  }
+
+  clock_t end4 = clock();
+  cout << "CPU elapsed time in seconds: "
+    <<(double)(end4 - start4)/CLOCKS_PER_SEC <<endl;
+  cout << "Pop Stack: " << stack4.pop() << '\n';
+  return 0;
 }
 
 

@@ -102,8 +102,8 @@ ListStack<Object>::operator=(const ListStack& st) {
   while(!isEmpty()) {
     pop();
   }
-  m_head = st->m_head;
-  m_size = st->m_size;
+  m_head = st.m_head;
+  m_size = st.m_size;
 }
 
 // number of elements in the stack
@@ -111,14 +111,14 @@ ListStack<Object>::operator=(const ListStack& st) {
 template <typename Object>
 size_t
 ListStack<Object>::mySize() {
-  ListStack temp = new ListStack();
+  ListStack<Object>* temp = new ListStack<Object>();
   int c = 0;
   while(!isEmpty()) { // this reverses the order
-    temp.push(pop());
+    temp->push(pop());
     c++;
   } 
-  while(!temp.isEmpty()) { // put elements back in order
-    push(temp.pop());
+  while(!temp->isEmpty()) { // put elements back in order
+    push(temp->pop());
   }
   return c;
 }
