@@ -73,7 +73,9 @@ ListStack<Object>::ListStack() : m_head(NULL), m_size(0) {}
 //copy constructor
 template <typename Object>
 ListStack<Object>::ListStack(const ListStack& st) {
-  ~ListStack(); // this code creates all new node elements
+  while(!isEmpty()) {
+    pop(); // clear out list and make new nodes
+  }
   m_size = st->m_size;
   Node* iter1 = st->m_head; // for stepping through the old list
   Node* iter2 = new Node(iter1->m_element); // for the new list
@@ -97,7 +99,9 @@ ListStack<Object>::~ListStack() {
 template <typename Object>
 ListStack<Object>&
 ListStack<Object>::operator=(const ListStack& st) {
-  ~ListStack();
+  while(!isEmpty()) {
+    pop();
+  }
   m_head = st->m_head;
   m_size = st->m_size;
 }

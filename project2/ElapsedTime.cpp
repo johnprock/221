@@ -9,6 +9,7 @@
 // be sure to include <ctime>
 #include<ctime>
 #include<iostream>
+#include "ListStack.h"
 
 using namespace std;
 
@@ -24,11 +25,10 @@ int main() {
    */
 
   /* record the number of elapsed ticks before calling f() */
+  
+  ListStack<int> stack;
   clock_t start = clock();
-
-  // ---> call f() here <---
-
-  /* record the number of elapsed ticks after calling f() */
+  
   clock_t end = clock();
 
   /*
