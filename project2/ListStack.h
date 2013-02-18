@@ -122,7 +122,7 @@ void
 ListStack<Object>::push(const Object& elem) {
   Node new_node =  new Node(elem, m_head);
   m_head = &new_node;
-
+  m_size++;
 }
 
 // pop the stack
@@ -136,6 +136,7 @@ ListStack<Object>::pop() throw(StackEmptyException) {
   NodePtr temp = m_head;
   m_head = m_head->m_next;
   delete temp;
+  m_size--;
   return obj;
 }
 
