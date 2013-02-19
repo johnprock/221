@@ -23,7 +23,7 @@ class ListStack {
     // copy constructor
     ListStack(const ListStack& st); 
 
-    //destructor
+    // destructor
     ~ListStack();
 
     // assignment operator
@@ -73,20 +73,23 @@ ListStack<Object>::ListStack() : m_head(NULL), m_size(0) {}
 //copy constructor
 template <typename Object>
 ListStack<Object>::ListStack(const ListStack& st) {
-  while(!isEmpty()) {
-    pop(); // clear out list and make new nodes
+  m_size = st.m_size; // stacks are of the same size
+  Node * iter = st.m_head;
+  if(iter == NULL) {
+    m_head = NULL; // no copy needs to be done stack empty
   }
-  m_size = st.m_size;
-  Node* iter1 = st.m_head; // for stepping through the old list
-  Node* iter2 = new Node(iter1->m_element); // for the new list
+  else {
+    m_head = new Node(iter.m_element);
+    Node * iter2 = m_head;
+    while(iter.m_next != NULL) {
+      iter = iter.m_next;
+      Node * temp = new Node(iter.m_element);
+      iter2.m_next = temp;
+      iter2 = iter2.m_next;
+    } 
+  }
+}    
 
-  for(int i=0; i<m_size; i++) {
-    iter1 = iter1->m_next;
-    iter2->m_next = new Node(iter1->m_element);
-    iter2 = iter2->m_next;
-  }
-  iter2->m_next = NULL;
-}
 
 //destructor
 template <typename Object>
@@ -99,11 +102,26 @@ ListStack<Object>::~ListStack() {
 template <typename Object>
 ListStack<Object>&
 ListStack<Object>::operator=(const ListStack& st) {
-  while(!isEmpty()) {
-    pop();
+  if(this != &st) {
+    while(!isEmpty()) {
+      pop(); // remove old elements
+    }
+
+    m_size = st.m_size; // stacks are of the same size
+    Node * iter = st.m_head;
+    if(iter == NULL) {
+      m_head = NULL; // no copy needs to be done stack empty
+    }
+    else {
+      m_head = new Node(iter.m_element);
+      Node * iter2 = m_head;
+      while(iter.m_next != NULL) {
+        iter = iter.m_next;
+        Node * temp = new Node(iter.m_element);
+        iter2.m_next = temp;
+        iter2 = iter2.m_next;
+    } 
   }
-  m_head = st.m_head;
-  m_size = st.m_size;
 }
 
 // number of elements in the stack
