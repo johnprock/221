@@ -1,6 +1,11 @@
+// Patrick Rock
+// CSCE 221H
+// 2/19/2013
+
 //ListStack.h -- a list-based implementation of the stack
 //Refer to ArrayStack.h (Stack implemenation) 
 //for array based implemenation.
+
 
 #ifndef LISTSTACK_H_
 #define LISTSTACK_H_
@@ -73,21 +78,15 @@ ListStack<Object>::ListStack() : m_head(NULL), m_size(0) {}
 //copy constructor
 template <typename Object>
 ListStack<Object>::ListStack(const ListStack& st) {
-  m_size = st.m_size; // stacks are of the same size
-  Node * iter = st.m_head;
-  if(iter == NULL) {
-    m_head = NULL; // no copy needs to be done stack empty
-  }
-  else {
-    m_head = new Node(iter.m_element);
-    Node * iter2 = m_head;
-    while(iter.m_next != NULL) {
-      iter = iter.m_next;
-      Node * temp = new Node(iter.m_element);
-      iter2.m_next = temp;
-      iter2 = iter2.m_next;
-    } 
-  }
+	m_head = NULL;
+	m_size = 0;
+	NodePtr temp;
+	temp = st.m_head;
+	while (temp != NULL)
+	{
+		push(temp->m_element);
+		temp = temp->m_next;
+	}
 }    
 
 
@@ -102,28 +101,15 @@ ListStack<Object>::~ListStack() {
 template <typename Object>
 ListStack<Object>&
 ListStack<Object>::operator=(const ListStack& st) {
-  if(this != &st) {
-    while(!isEmpty()) {
-      pop(); // remove old elements
-    }
-
-    m_size = st.m_size; // stacks are of the same size
-    Node * iter = st.m_head;
-    if(iter == NULL) {
-      m_head = NULL; // no copy needs to be done stack empty
-    }
-    else {
-      m_head = new Node(iter.m_element);
-      Node * iter2 = m_head;
-      while(iter.m_next != NULL) {
-        iter = iter.m_next;
-        Node * temp = new Node(iter.m_element);
-        iter2.m_next = temp;
-        iter2 = iter2.m_next;
-    } 
-  }
+	NodePtr temp;
+	temp = st.m_head;
+	while(temp != NULL)
+	{
+		push(temp->m_element);
+		temp = temp->m_next;
+	}
+	delete temp;
 }
-
 // number of elements in the stack
 // bad implementation
 template <typename Object>
