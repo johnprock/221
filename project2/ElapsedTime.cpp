@@ -51,8 +51,8 @@ int main() {
     double sizeTime     = ( (double)(endSize - startSize)/CLOCKS_PER_SEC ); 
     double mySizeTime   = ( (double)(endMySize - startMySize)/CLOCKS_PER_SEC );
 
-    cout << size <<setw(10)<< pushTime <<setw(10)<< popTime 
-      <<setw(10)<< sizeTime <<setw(10)<< mySizeTime << endl;
+    cout << setw(10)<<left<< size <<setw(10)<<left<< pushTime <<setw(10)<<left<< popTime 
+      <<setw(10)<<left<< sizeTime << mySizeTime << endl;
   }
   return 0;
 }
