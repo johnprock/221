@@ -14,15 +14,22 @@ int main() {
  
   // initialize local variables
   int size; // size of stack is set at each loop iteration
-  ListStack<int> stack1 = ListStack<int>();
-  ArrayStack<int> stack2 = ArrayStack<int>();
+
 
   // set headers for data
   cout << "Size push pop size mySize pushDouble "
-    << "mySize(Array)\n";
+    << "mySize(Array) pushDoublePopulated\n";
 
   for(int i=0; i<25; i++) { // measure ten powers of 2
-  size = pow(2,i);
+    size = pow(2,i);
+    ListStack<int> stack1 = ListStack<int>();
+    ArrayStack<int> stack2 = ArrayStack<int>();
+    ArrayStack<int> stack3 = ArrayStack<int>();
+
+    //populate stack for pushDouble experiment
+    for(int j=0; j<10000; j++) {
+      stack3.pushDouble(0);
+    }
 
     //time push
     clock_t startPush = clock();
@@ -60,6 +67,14 @@ int main() {
       stack2.mySize();   
     clock_t endMySizeA = clock();
 
+    //time pushDouble on a populated stack
+    clock_t startPushDouble1 = clock();
+    for(int j=0; j<size; j++) {
+      stack3.pushDouble(0);   
+    }
+    clock_t endPushDouble1 = clock();
+
+
     //calculate actual run times
     double pushTime     = ( (double)(endPush - startPush)/CLOCKS_PER_SEC ); 
     double popTime      = ( (double)(endPop - startPop)/CLOCKS_PER_SEC );
@@ -67,11 +82,12 @@ int main() {
     double mySizeTime   = ( (double)(endMySize - startMySize)/CLOCKS_PER_SEC );
     double doubleTime   = ( (double)(endPushDouble - startPushDouble)/CLOCKS_PER_SEC );
     double mySizeATime  = ( (double)(endMySizeA - startMySizeA)/CLOCKS_PER_SEC );
+    double doubPopTime  = ( (double)(endPushDouble1 - startPushDouble1)/CLOCKS_PER_SEC );
 
     //output data
     cout << size << ' ' << pushTime << ' ' << popTime 
       << ' ' << sizeTime << ' '<< mySizeTime << ' ' << doubleTime
-      << ' ' << mySizeATime << endl;
+      << ' ' << mySizeATime << ' ' << doubPopTime << endl;
   }
   return 0;
 }
