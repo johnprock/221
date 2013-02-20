@@ -78,13 +78,13 @@ ListStack<Object>::ListStack() : m_head(NULL), m_size(0) {}
 //copy constructor
 template <typename Object>
 ListStack<Object>::ListStack(const ListStack& st) {
-	m_head = NULL;
+	m_head = NULL; // initialize with default values
 	m_size = 0;
 	NodePtr temp;
 	temp = st.m_head;
-	while (temp != NULL)
+	while (temp != NULL) // same as assignment
 	{
-		push(temp->m_element);
+		push(temp->m_element); 
 		temp = temp->m_next;
 	}
 }    
@@ -103,10 +103,10 @@ ListStack<Object>&
 ListStack<Object>::operator=(const ListStack& st) {
 	NodePtr temp;
 	temp = st.m_head;
-	while(temp != NULL)
+	while(temp != NULL) // end of the stack is NULL
 	{
-		push(temp->m_element);
-		temp = temp->m_next;
+		push(temp->m_element); 
+		temp = temp->m_next; // step through the stack
 	}
 	delete temp;
 }
@@ -141,7 +141,7 @@ template <typename Object>
 void
 ListStack<Object>::push(const Object& elem) {
   Node* new_node =  new Node(elem, m_head);
-  m_head = new_node;
+  m_head = new_node; //head slides down into new node
   m_size++;
 }
 
@@ -152,7 +152,7 @@ ListStack<Object>::pop() throw(StackEmptyException) {
   if (isEmpty())
     throw StackEmptyException();
 	
-  Object obj = m_head->m_element;
+  Object obj = m_head->m_element; //keep track of data since node is deleted
   NodePtr temp = m_head;
   m_head = m_head->m_next;
   delete temp;
