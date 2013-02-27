@@ -1,3 +1,6 @@
+// Patrick Rock
+// CSCE 221H
+
 /* BinaryTree.h:
  * A C++ template which implements a binary tree ADT.
  */
@@ -92,10 +95,51 @@ public:
   void preorder(deque<NodePtr> &v,NodePtr r);		// gives a deque that contains the preorder traversal of the BinaryTree
   void inorder(deque<NodePtr> &v,NodePtr r);		// gives a deque that contains the inorder traversal of the BinaryTree
   void postorder(deque<NodePtr> &v,NodePtr r);		// gives a deque that contains the postorder traversal of the BinaryTree
-  NodePtr simpleSearch(const Object& e);			// searches the BinaryTree for the element e
+  NodePtr simpleSearch(const Object& e);		// searches the BinaryTree for the element e
 
 };
 
+// inserts a Node with element e to the left of p
+template <typename Object>        
+typename BinaryTree<Object>::NodePtr
+BinaryTree<Object>::insertLeft(NodePtr p, const Object& e) {
+  return NULL;
+}
+
+// inserts a Node with element e to the right of p
+template <typename Object>
+typename BinaryTree<Object>::NodePtr
+BinaryTree<Object>::insertRight(NodePtr p, const Object& e) {
+  return NULL;
+}
+
+// gives a deque that contains the preorder traversal of the BinaryTree
+template <typename Object>
+void
+BinaryTree<Object>::preorder(deque<NodePtr> &v, NodePtr r) {
+  return NULL;
+}
+
+// gives a deque that contains the inorder traversal of the BinaryTree
+template <typename Object>
+void
+BinaryTree<Object>::inorder(deque<NodePtr> &v, NodePtr r) {
+  return NULL;
+}
+
+// gives a deque that contains the postorder traversal of the BinaryTree
+template <typename Object>
+void
+BinaryTree<Object>::postorder(deque<NodePtr> &v, NodePtr r) {
+  return NULL;
+}
+
+// searches the BinaryTree for the element e
+template <typename Object>
+typename BinaryTree<Object>::NodePtr
+BinaryTree<Object>::simpleSearch(const Object& e) {
+  return NULL;
+}
 
 #endif
 
