@@ -100,17 +100,32 @@ public:
 };
 
 // inserts a Node with element e to the left of p
+// returns NULL if element already has a left child
 template <typename Object>        
 typename BinaryTree<Object>::NodePtr
 BinaryTree<Object>::insertLeft(NodePtr p, const Object& e) {
-  return NULL;
+  
+  if(p->getLeftChild() != NULL) {
+    return NULL; // node already has a left child
+  }
+  
+  Node* n = new Node(e);
+  p->setLeftChild(n);
+  return n; // return the inserted node
 }
 
 // inserts a Node with element e to the right of p
+// returns NULL if element already has a right child
 template <typename Object>
 typename BinaryTree<Object>::NodePtr
 BinaryTree<Object>::insertRight(NodePtr p, const Object& e) {
-  return NULL;
+  if(p->getRightChild() != NULL) {
+    return NULL;
+  }
+
+  Node* n = new Node(e);
+  p->setRightChild(n);
+  return n;
 }
 
 // gives a deque that contains the preorder traversal of the BinaryTree
