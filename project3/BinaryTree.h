@@ -10,6 +10,9 @@
 #include <deque>
 #include "EulerTour.h"
 
+template<typename Object>
+class RecursiveInorder;
+
 using namespace std;
 
 template<typename Object>
@@ -148,7 +151,6 @@ BinaryTree<Object>::insertRight(NodePtr p, const Object& e) {
 template <typename Object>
 void
 BinaryTree<Object>::preorder(deque<NodePtr> &v, NodePtr r) {
-  return NULL;
 }
 
 // gives a deque that contains the inorder traversal of the BinaryTree
