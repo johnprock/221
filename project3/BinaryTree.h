@@ -111,6 +111,13 @@ BinaryTree<Object>::insertLeft(NodePtr p, const Object& e) {
   
   Node* n = new Node(e);
   p->setLeftChild(n);
+
+  // update tree internal state
+  size = size+1;
+  if(n->getDepth() > depth) {
+    depth = n->getDepth();
+  }
+
   return n; // return the inserted node
 }
 
@@ -125,6 +132,13 @@ BinaryTree<Object>::insertRight(NodePtr p, const Object& e) {
 
   Node* n = new Node(e);
   p->setRightChild(n);
+ 
+  // update tree internal state
+  size = size+1;
+  if(n->getDepth() > depth) {
+    depth = n->getDepth();
+  }
+
   return n;
 }
 
@@ -146,7 +160,7 @@ BinaryTree<Object>::inorder(deque<NodePtr> &v, NodePtr r) {
 template <typename Object>
 void
 BinaryTree<Object>::postorder(deque<NodePtr> &v, NodePtr r) {
-  return NULL;
+ return NULL;
 }
 
 // searches the BinaryTree for the element e

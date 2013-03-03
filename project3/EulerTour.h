@@ -1,3 +1,5 @@
+#include "BinaryTree.h"
+
 #ifndef EULERTOUR_H
 #define EULERTOUR_H
 
