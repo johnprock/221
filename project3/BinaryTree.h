@@ -8,6 +8,8 @@
 #define BINARYTREE_H
 #include <iostream>
 #include <deque>
+#include "EulerTour.h"
+
 using namespace std;
 
 template<typename Object>
@@ -152,8 +154,9 @@ BinaryTree<Object>::preorder(deque<NodePtr> &v, NodePtr r) {
 // gives a deque that contains the inorder traversal of the BinaryTree
 template <typename Object>
 void
-BinaryTree<Object>::inorder(deque<NodePtr> &v, NodePtr r) {
-  return NULL;
+BinaryTree<Object>::inorder(deque<NodePtr> &v, NodePtr r) { 
+  RecursiveInorder<Object> tour = RecursiveInorder<Object>(v);
+  tour.eulerTour(r);
 }
 
 // gives a deque that contains the postorder traversal of the BinaryTree
