@@ -13,6 +13,7 @@ int main() {
   tree.preorder(in,tree.getRoot());
   
   cout << tree;
+  cout << tree.getDepth() << '\n';
 
-  cout << 5 << "5";
+  cout << 5 << "5\n";
 }

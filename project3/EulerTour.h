@@ -76,7 +76,7 @@ public:
     d.push_back(p);
   }
 
-  virtual void visitRight(typename EulerTour<E>::NodePtr p)
+  virtual void visitLeft(typename EulerTour<E>::NodePtr p)
   {
     d.push_back(p);
   }
@@ -97,7 +97,7 @@ public:
     d.push_back(p);
   }
 
-  virtual void visitLeft(typename EulerTour<E>::NodePtr p)
+  virtual void visitRight(typename EulerTour<E>::NodePtr p)
   {
     d.push_back(p);
   }

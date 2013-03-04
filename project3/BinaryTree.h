@@ -121,7 +121,7 @@ BinaryTree<Object>::insertLeft(NodePtr p, const Object& e) {
     return NULL; // node already has a left child
   }
   
-  Node* n = new Node(e);
+  Node* n = new Node(e, p);
   p->setLeftChild(n);
 
   // update tree internal state
@@ -142,7 +142,7 @@ BinaryTree<Object>::insertRight(NodePtr p, const Object& e) {
     return NULL;
   }
 
-  Node* n = new Node(e);
+  Node* n = new Node(e, p);
   p->setRightChild(n);
  
   // update tree internal state
@@ -182,6 +182,13 @@ BinaryTree<Object>::postorder(deque<NodePtr> &v, NodePtr r) {
 template <typename Object>
 typename BinaryTree<Object>::NodePtr
 BinaryTree<Object>::simpleSearch(const Object& e) {
+  deque<NodePtr> d;
+  RecursivePostorder<Object> tour = RecursivePostorder<Object>(d);
+  tour.eulerTour(root);
+  for(int i=0; i<d.size(); i++) {
+    if(d[i]->getElement() == e)
+      return d[i];
+  }
   return NULL;
 }
 
