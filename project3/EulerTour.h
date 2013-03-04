@@ -82,5 +82,27 @@ public:
   }
 };
 
+template<typename E>
+class RecursivePostorder : public EulerTour<E>
+{
+  std::deque<typename EulerTour<E>::NodePtr>& d;
+
+public:
+  RecursivePostorder(std::deque<typename EulerTour<E>::NodePtr>& de)
+    : d(de)
+    {};
+
+  virtual void visitExternal(typename EulerTour<E>::NodePtr p)
+  {
+    d.push_back(p);
+  }
+
+  virtual void visitLeft(typename EulerTour<E>::NodePtr p)
+  {
+    d.push_back(p);
+  }
+};
+
+
 
 #endif

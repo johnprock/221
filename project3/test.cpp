@@ -10,8 +10,8 @@ int main() {
 
   deque<BinaryTree<int>::Node*> in;
   in.clear();
-  tree.inorder(in,tree.getRoot());
-
+  tree.preorder(in,tree.getRoot());
+  
   cout << tree;
 
   cout << 5 << "5";
