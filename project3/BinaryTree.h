@@ -8,6 +8,7 @@
 #define BINARYTREE_H
 #include <iostream>
 #include <deque>
+#include <stack>
 #include "EulerTour.h"
 
 // let the compiler know about these
@@ -182,7 +183,7 @@ BinaryTree<Object>::insertRight(NodePtr p, const Object& e) {
 // gives a deque that contains the preorder traversal of the BinaryTree
 template <typename Object>
 void
-BinaryTree<Object>::preorder(deque<NodePtr> &v, NodePtr r) {
+BinaryTree<Object>::preorder(deque<NodePtr> &v, NodePtr r) { // recursive
   RecursivePreorder<Object> tour = RecursivePreorder<Object>(v);
   tour.eulerTour(r);
 }
@@ -190,15 +191,34 @@ BinaryTree<Object>::preorder(deque<NodePtr> &v, NodePtr r) {
 // gives a deque that contains the inorder traversal of the BinaryTree
 template <typename Object>
 void
-BinaryTree<Object>::inorder(deque<NodePtr> &v, NodePtr r) { 
-  RecursiveInorder<Object> tour = RecursiveInorder<Object>(v);
-  tour.eulerTour(r);
+BinaryTree<Object>::inorder(deque<NodePtr> &v, NodePtr r) { // iterative
+  stack<NodePtr> in = stack<NodePtr>();
+  NodePtr current = r;   //push the root on the stack
+
+  bool c = false;
+  while(!c) {
+    if(current != NULL) // go to furthest left child
+    {
+      in.push(current);
+      current = current->getLeftChild();
+    }
+    else {
+      if(!in.empty()) { 
+        current = in.top(); 
+        in.pop();
+        v.push_back(current);
+        current = current->getRightChild(); 
+      }
+      else // if stack is empty we are done
+        c = true;
+    }
+  }
 }
 
 // gives a deque that contains the postorder traversal of the BinaryTree
 template <typename Object>
 void
-BinaryTree<Object>::postorder(deque<NodePtr> &v, NodePtr r) {
+BinaryTree<Object>::postorder(deque<NodePtr> &v, NodePtr r) { // recursive
  RecursivePostorder<Object> tour = RecursivePostorder<Object>(v);
  tour.eulerTour(r);
 }
@@ -206,8 +226,8 @@ BinaryTree<Object>::postorder(deque<NodePtr> &v, NodePtr r) {
 // searches the BinaryTree for the element e
 template <typename Object>
 typename BinaryTree<Object>::NodePtr
-BinaryTree<Object>::simpleSearch(const Object& e) {
-  deque<NodePtr> d;
+BinaryTree<Object>::simpleSearch(const Object& e) { // generates traversal and
+  deque<NodePtr> d;                                 // then searchs it
   RecursivePostorder<Object> tour = RecursivePostorder<Object>(d);
   tour.eulerTour(root);
   for(int i=0; i<d.size(); i++) {
