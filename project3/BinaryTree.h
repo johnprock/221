@@ -42,6 +42,25 @@ public:
 	else depth = 0; 
       }
 
+      Node(const Node* n) { // copy constructor
+        element = n->getElement();
+        depth = n->getDepth();
+        parent = n->getParent();
+        if(n->getLeftChild() == NULL){
+          leftchild = NULL;
+        }
+        else {
+          leftchild = new Node(n->getLeftChild());
+        }
+        if(n->getRightChild() == NULL){
+          rightchild = NULL;
+        }
+        else {
+          rightchild = new Node(n->getRightChild());
+        }
+
+      }
+
       ~Node(){	// destructor for Node
 	  delete rightchild;
 	  rightchild = NULL;
@@ -50,12 +69,12 @@ public:
       }	
       
       //accessor functions:
-      Object getElement(){return element;}
-      Node* getParent(){return parent;}
-      Node* getLeftChild(){return leftchild;}
-      Node* getRightChild(){return rightchild;}
-      int getDepth(){return depth;}
-      bool isExternal(){return leftchild == NULL && rightchild == NULL;}
+      Object getElement()const{return element;}
+      Node* getParent()const{return parent;}
+      Node* getLeftChild()const{return leftchild;}
+      Node* getRightChild()const{return rightchild;}
+      int getDepth()const{return depth;}
+      bool isExternal()const{return leftchild == NULL && rightchild == NULL;}
 
       //modifier functions
       void setElement(const Object& e){element = e;}
@@ -79,7 +98,13 @@ public:
   ~BinaryTree(){					// destructor for BinaryTree
       delete root;
       root = NULL;
-  }		
+  }
+  BinaryTree(const BinaryTree<Object>& b){              // copy constructor
+    size =  b.getSize();
+    depth = b.getDepth();
+    NodePtr n = b.getRoot();
+    root = new Node(n);
+  }
   int getSize() const{					// return size of BinaryTree
     return size;
   }
@@ -89,7 +114,7 @@ public:
   bool isEmpty(){					// is the BinaryTree empty?
     return size == 0;
   }
-  NodePtr getRoot(){					// returns the root of the BinaryTree
+  NodePtr getRoot() const{				// returns the root of the BinaryTree
     return root;
   }
   friend ostream &operator<<( ostream &out, BinaryTree<Object> &T ){   // prints out the tree
