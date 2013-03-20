@@ -12,6 +12,17 @@ class PriorityQueueSort{
   typedef typename PQ::ItemPair::element_type Object;
   public:
     void sort(NodeSequence<Object>& s){
+      PQ p(); 
+      while(!s.isEmpty()) {
+        Object e = s.first();
+        s.removeAtRank(0);
+        p.insertItem(e,e);
+      }
+      while(!p.isEmpty()) {
+        Object e = p.minElement();
+        p.removeMin();
+        s.insertLast(e);
+      }
     }
 };
 
