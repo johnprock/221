@@ -14,22 +14,23 @@ class PriorityQueueSort{
     void sort(NodeSequence<Object>& s){
       PQ p(); 
       while(!s.isEmpty()) {
-        Object e = s.first();
-        s.removeAtRank(0);
+        Object e = s.first().element();
+       // s.removeAtRank(0);
         p.insertItem(e,e);
       }
-      while(!p.isEmpty()) {
-        Object e = p.minElement();
-        p.removeMin();
-        s.insertLast(e);
-      }
+    //  while(!p.isEmpty()) {
+    //    Object e = p.minElement();
+    //    p.removeMin();
+    //    s.insertLast(e);
+    //  }
     }
 };
 
 template <typename Object, typename Comp>
 class InsertionSort
  : public PriorityQueueSort<SortedSeqPriorityQueue<Object, Object, Comp> >
-{ };
+{ }; 
+
 
 template <typename Object, typename Comp>
 class HeapSort
