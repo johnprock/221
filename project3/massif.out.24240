@@ -1,0 +1,1133 @@
+desc: (none)
+cmd: ./a.out 10000
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=1570286
+mem_heap_B=20
+mem_heap_extra_B=12
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=1648874
+mem_heap_B=4248
+mem_heap_extra_B=1936
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=1703996
+mem_heap_B=7280
+mem_heap_extra_B=3464
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=1786758
+mem_heap_B=13356
+mem_heap_extra_B=6212
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=1872391
+mem_heap_B=16704
+mem_heap_extra_B=8536
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=1974664
+mem_heap_B=22588
+mem_heap_extra_B=11468
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=2046410
+mem_heap_B=25684
+mem_heap_extra_B=12404
+mem_stacks_B=0
+heap_tree=detailed
+n4: 25684 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 10220 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 10220 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 10220 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 10220 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 10220 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 10220 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 5120 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n3: 5120 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 2560 0x804B356: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_new_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 2560 0x804A839: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_reserve_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 2560 0x804A449: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_range_insert_aux<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::forward_iterator_tag) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n1: 2560 0x8049F45: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_insert_dispatch<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::__false_type) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 2560 0x80497D1: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::insert<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 2560 0x804916D: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::operator=(std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> > const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 2560 0x8048A31: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n0: 2560 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 2048 0x80493F0: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_push_back_aux(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 2048 0x8048D76: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::push_back(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 2048 0x80489EC: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n0: 2048 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 512 0x804A066: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_create_nodes(BinaryTree<int>::Node***, BinaryTree<int>::Node***) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 512 0x80499CA: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_initialize_map(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 512 0x804927D: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_Deque_base() (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n2: 512 0x8048C8F: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::deque() (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 512 0x8048912: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n0: 512 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n0: 0 in 1 place, below massif's threshold (01.00%)
+ n0: 124 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=8
+#-----------
+time=2161479
+mem_heap_B=30920
+mem_heap_extra_B=16184
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=2235997
+mem_heap_B=34792
+mem_heap_extra_B=18208
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=2339166
+mem_heap_B=40476
+mem_heap_extra_B=21004
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=2392444
+mem_heap_B=43388
+mem_heap_extra_B=22452
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=2478123
+mem_heap_B=48252
+mem_heap_extra_B=24772
+mem_stacks_B=0
+heap_tree=detailed
+n4: 48252 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 20460 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 20460 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 20460 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 20460 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 20460 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 20460 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 7168 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n3: 7168 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 4096 0x80493F0: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_push_back_aux(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 4096 0x8048D76: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::push_back(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 4096 0x80489EC: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n0: 4096 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 2560 0x804B356: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_new_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 2560 0x804A839: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_reserve_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 2560 0x804A449: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_range_insert_aux<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::forward_iterator_tag) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n1: 2560 0x8049F45: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_insert_dispatch<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::__false_type) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 2560 0x80497D1: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::insert<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 2560 0x804916D: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::operator=(std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> > const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 2560 0x8048A31: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n0: 2560 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 512 in 1 place, below massif's threshold (01.00%)
+ n0: 164 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=13
+#-----------
+time=2550434
+mem_heap_B=50380
+mem_heap_extra_B=24804
+mem_stacks_B=0
+heap_tree=detailed
+n4: 50380 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 20460 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 20460 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 20460 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 20460 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 20460 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 20460 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 9216 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n3: 9216 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 4608 0x804B356: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_new_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 4608 0x804A839: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_reserve_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 4608 0x804A449: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_range_insert_aux<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::forward_iterator_tag) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n1: 4608 0x8049F45: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_insert_dispatch<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::__false_type) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 4608 0x80497D1: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::insert<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 4608 0x804916D: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::operator=(std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> > const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 4608 0x8048A31: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n0: 4608 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 4096 0x80493F0: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_push_back_aux(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 4096 0x8048D76: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::push_back(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 4096 0x80489EC: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n0: 4096 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 512 in 1 place, below massif's threshold (01.00%)
+ n0: 244 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=14
+#-----------
+time=2647230
+mem_heap_B=52728
+mem_heap_extra_B=28080
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=2775026
+mem_heap_B=59512
+mem_heap_extra_B=31552
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=2874939
+mem_heap_B=65036
+mem_heap_extra_B=34268
+mem_stacks_B=0
+heap_tree=detailed
+n4: 65036 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 28300 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 28300 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 28300 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 28300 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 28300 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 28300 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 8192 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n3: 8192 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 4608 0x804B356: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_new_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 4608 0x804A839: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_reserve_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 4608 0x804A449: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_range_insert_aux<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::forward_iterator_tag) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n1: 4608 0x8049F45: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_insert_dispatch<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::__false_type) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 4608 0x80497D1: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::insert<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 4608 0x804916D: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::operator=(std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> > const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 4608 0x8048A31: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n0: 4608 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 3072 0x80493F0: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_push_back_aux(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 3072 0x8048D76: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::push_back(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 3072 0x80489EC: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n0: 3072 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 512 in 1 place, below massif's threshold (01.00%)
+ n0: 244 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=17
+#-----------
+time=2985920
+mem_heap_B=71060
+mem_heap_extra_B=37284
+mem_stacks_B=0
+heap_tree=detailed
+n4: 71060 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 30800 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 30800 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 30800 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 30800 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 30800 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 30800 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 9216 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n3: 9216 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 4608 0x804B356: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_new_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 4608 0x804A839: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_reserve_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 4608 0x804A449: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_range_insert_aux<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::forward_iterator_tag) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n1: 4608 0x8049F45: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_insert_dispatch<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::__false_type) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 4608 0x80497D1: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::insert<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 4608 0x804916D: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::operator=(std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> > const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 4608 0x8048A31: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n0: 4608 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 4096 0x80493F0: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_push_back_aux(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 4096 0x8048D76: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::push_back(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 4096 0x80489EC: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n0: 4096 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 512 in 1 place, below massif's threshold (01.00%)
+ n0: 244 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=18
+#-----------
+time=3096901
+mem_heap_B=77084
+mem_heap_extra_B=40300
+mem_stacks_B=0
+heap_tree=detailed
+n4: 77084 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 33300 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 33300 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 33300 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 33300 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 33300 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 33300 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 10240 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n3: 10240 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 5120 0x80493F0: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_push_back_aux(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 5120 0x8048D76: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::push_back(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 5120 0x80489EC: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n0: 5120 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 4608 0x804B356: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_new_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 4608 0x804A839: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_reserve_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 4608 0x804A449: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_range_insert_aux<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::forward_iterator_tag) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n1: 4608 0x8049F45: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_insert_dispatch<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::__false_type) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 4608 0x80497D1: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::insert<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 4608 0x804916D: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::operator=(std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> > const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 4608 0x8048A31: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n0: 4608 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 512 in 1 place, below massif's threshold (01.00%)
+ n0: 244 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=19
+#-----------
+time=3209235
+mem_heap_B=82788
+mem_heap_extra_B=43340
+mem_stacks_B=0
+heap_tree=detailed
+n4: 82788 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 35820 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 35820 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 35820 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 35820 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 35820 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 35820 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 10752 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n3: 10752 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 5632 0x80493F0: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_push_back_aux(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 5632 0x8048D76: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::push_back(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 5632 0x80489EC: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n0: 5632 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 4608 0x804B356: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_new_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 4608 0x804A839: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_reserve_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 4608 0x804A449: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_range_insert_aux<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::forward_iterator_tag) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n1: 4608 0x8049F45: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_insert_dispatch<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::__false_type) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 4608 0x80497D1: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::insert<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 4608 0x804916D: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::operator=(std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> > const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 4608 0x8048A31: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n0: 4608 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 512 in 1 place, below massif's threshold (01.00%)
+ n0: 396 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=20
+#-----------
+time=3275959
+mem_heap_B=86740
+mem_heap_extra_B=45156
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=3364637
+mem_heap_B=91252
+mem_heap_extra_B=47564
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=3437041
+mem_heap_B=95516
+mem_heap_extra_B=49524
+mem_stacks_B=0
+heap_tree=detailed
+n4: 95516 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 40940 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 40940 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 40940 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 40940 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 40940 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 40940 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 13312 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n3: 13312 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 8192 0x80493F0: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_push_back_aux(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 8192 0x8048D76: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::push_back(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 8192 0x80489EC: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n0: 8192 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 4608 0x804B356: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_new_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 4608 0x804A839: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_reserve_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 4608 0x804A449: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_range_insert_aux<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::forward_iterator_tag) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n1: 4608 0x8049F45: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_insert_dispatch<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::__false_type) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 4608 0x80497D1: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::insert<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 4608 0x804916D: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::operator=(std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> > const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 4608 0x8048A31: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n0: 4608 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 512 in 1 place, below massif's threshold (01.00%)
+ n0: 324 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=23
+#-----------
+time=3578561
+mem_heap_B=99612
+mem_heap_extra_B=49588
+mem_stacks_B=0
+heap_tree=detailed
+n4: 99612 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 40940 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 40940 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 40940 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 40940 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 40940 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 40940 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 17408 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n3: 17408 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 8704 0x804B356: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_new_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 8704 0x804A839: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_reserve_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 8704 0x804A449: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_range_insert_aux<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::forward_iterator_tag) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n1: 8704 0x8049F45: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_insert_dispatch<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::__false_type) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 8704 0x80497D1: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::insert<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 8704 0x804916D: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::operator=(std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> > const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 8704 0x8048A31: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n0: 8704 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 8192 0x80493F0: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_push_back_aux(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 8192 0x8048D76: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::push_back(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 8192 0x80489EC: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n0: 8192 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 512 in 1 place, below massif's threshold (01.00%)
+ n0: 324 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=24
+#-----------
+time=3712266
+mem_heap_B=99504
+mem_heap_extra_B=53832
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=3823247
+mem_heap_B=105528
+mem_heap_extra_B=56848
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=3934228
+mem_heap_B=111552
+mem_heap_extra_B=59864
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=4045209
+mem_heap_B=117576
+mem_heap_extra_B=62880
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=4111762
+mem_heap_B=121088
+mem_heap_extra_B=64688
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=4222743
+mem_heap_B=127112
+mem_heap_extra_B=67704
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=4333724
+mem_heap_B=133136
+mem_heap_extra_B=70720
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=4444705
+mem_heap_B=139160
+mem_heap_extra_B=73736
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=4533561
+mem_heap_B=144184
+mem_heap_extra_B=76152
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=4598781
+mem_heap_B=147636
+mem_heap_extra_B=77924
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=4696487
+mem_heap_B=153060
+mem_heap_extra_B=80580
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=4826938
+mem_heap_B=159964
+mem_heap_extra_B=84124
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=4924644
+mem_heap_B=165388
+mem_heap_extra_B=86780
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=4989875
+mem_heap_B=168840
+mem_heap_extra_B=88552
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=5065943
+mem_heap_B=172912
+mem_heap_extra_B=90608
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=5131163
+mem_heap_B=176364
+mem_heap_extra_B=92380
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=5261355
+mem_heap_B=183760
+mem_heap_extra_B=95920
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=5374906
+mem_heap_B=189884
+mem_heap_extra_B=98996
+mem_stacks_B=0
+heap_tree=detailed
+n4: 189884 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 81900 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 81900 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 81900 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 81900 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 81900 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 81900 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 25600 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n3: 25600 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 16384 0x80493F0: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_push_back_aux(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 16384 0x8048D76: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::push_back(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 16384 0x80489EC: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n0: 16384 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 8704 0x804B356: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_new_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 8704 0x804A839: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_reserve_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 8704 0x804A449: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_range_insert_aux<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::forward_iterator_tag) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n1: 8704 0x8049F45: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_insert_dispatch<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::__false_type) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 8704 0x80497D1: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::insert<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 8704 0x804916D: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::operator=(std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> > const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 8704 0x8048A31: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n0: 8704 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 512 in 1 place, below massif's threshold (01.00%)
+ n0: 484 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=42
+#-----------
+time=5655633
+mem_heap_B=198236
+mem_heap_extra_B=99124
+mem_stacks_B=0
+heap_tree=detailed
+n4: 198236 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 81900 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 81900 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 81900 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 81900 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 81900 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 81900 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 33792 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n3: 33792 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 16896 0x804B356: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_new_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 16896 0x804A839: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_reserve_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 16896 0x804A449: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_range_insert_aux<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::forward_iterator_tag) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n1: 16896 0x8049F45: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_insert_dispatch<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::__false_type) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 16896 0x80497D1: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::insert<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 16896 0x804916D: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::operator=(std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> > const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 16896 0x8048A31: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n0: 16896 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 16384 0x80493F0: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_push_back_aux(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 16384 0x8048D76: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::push_back(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 16384 0x80489EC: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n0: 16384 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 512 in 1 place, below massif's threshold (01.00%)
+ n0: 644 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=43
+#-----------
+time=5753416
+mem_heap_B=188256
+mem_heap_extra_B=102280
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=5883867
+mem_heap_B=195160
+mem_heap_extra_B=105896
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=5981573
+mem_heap_B=200584
+mem_heap_extra_B=108552
+mem_stacks_B=0
+heap_tree=detailed
+n4: 200584 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 89740 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 89740 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 89740 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 89720 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 89720 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 89720 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 20480 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n2: 20480 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 16896 0x804B356: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_new_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 16896 0x804A839: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_reserve_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 16896 0x804A449: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_range_insert_aux<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::forward_iterator_tag) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n1: 16896 0x8049F45: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_insert_dispatch<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::__false_type) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 16896 0x80497D1: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::insert<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 16896 0x804916D: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::operator=(std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> > const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 16896 0x8048A31: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n0: 16896 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 3584 in 2 places, all below massif's threshold (01.00%)
+ n0: 644 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=46
+#-----------
+time=6112024
+mem_heap_B=207488
+mem_heap_extra_B=112096
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=6209730
+mem_heap_B=212912
+mem_heap_extra_B=114752
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=6274950
+mem_heap_B=216364
+mem_heap_extra_B=116524
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=6372690
+mem_heap_B=221788
+mem_heap_extra_B=119180
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=6426204
+mem_heap_B=224208
+mem_heap_extra_B=120632
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=6437805
+mem_heap_B=225220
+mem_heap_extra_B=120940
+mem_stacks_B=0
+heap_tree=detailed
+n4: 225220 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 100000 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 100000 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 100000 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 100000 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 100000 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 100000 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 24576 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n3: 24576 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 16896 0x804B356: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_new_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 16896 0x804A839: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_reserve_elements_at_front(unsigned int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 16896 0x804A449: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_range_insert_aux<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::forward_iterator_tag) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n1: 16896 0x8049F45: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_insert_dispatch<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::__false_type) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 16896 0x80497D1: void std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::insert<std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*> >(std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node*&, BinaryTree<int>::Node**>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>, std::_Deque_iterator<BinaryTree<int>::Node*, BinaryTree<int>::Node* const&, BinaryTree<int>::Node* const*>) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 16896 0x804916D: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::operator=(std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> > const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 16896 0x8048A31: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n0: 16896 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 7168 0x80493F0: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_push_back_aux(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n1: 7168 0x8048D76: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::push_back(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 7168 0x80489EC: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n0: 7168 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 512 in 1 place, below massif's threshold (01.00%)
+ n0: 644 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=52
+#-----------
+time=6564809
+mem_heap_B=216004
+mem_heap_extra_B=120796
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=6627406
+mem_heap_B=202612
+mem_heap_extra_B=120588
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=6687603
+mem_heap_B=204700
+mem_heap_extra_B=120620
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=6747270
+mem_heap_B=206388
+mem_heap_extra_B=120652
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=6807440
+mem_heap_B=208876
+mem_heap_extra_B=120684
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=6867016
+mem_heap_B=210924
+mem_heap_extra_B=120716
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=6926624
+mem_heap_B=212972
+mem_heap_extra_B=120748
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=6986870
+mem_heap_B=215180
+mem_heap_extra_B=120780
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=7046490
+mem_heap_B=217228
+mem_heap_extra_B=120812
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=7106066
+mem_heap_B=219276
+mem_heap_extra_B=120844
+mem_stacks_B=0
+heap_tree=detailed
+n4: 219276 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 100000 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 100000 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 100000 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 100000 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 100000 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 100000 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 18944 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n2: 18944 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 18432 0x80493F0: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_push_back_aux(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n3: 18432 0x8048D76: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::push_back(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 10752 0x804C617: RecursivePreorder<int>::visitExternal(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n2: 10752 0x8049841: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 5632 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 5632 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n2: 5632 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n1: 5120 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+           n1: 5120 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+            n1: 5120 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+             n0: 5120 in 2 places, all below massif's threshold (01.00%)
+          n0: 512 in 1 place, below massif's threshold (01.00%)
+       n2: 5120 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 4608 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 4608 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n1: 4608 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+           n1: 4608 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+            n1: 4608 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+             n0: 4608 in 2 places, all below massif's threshold (01.00%)
+        n0: 512 in 1 place, below massif's threshold (01.00%)
+     n1: 7680 0x804C635: RecursivePreorder<int>::visitLeft(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n2: 7680 0x804985F: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 4096 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 4096 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n0: 4096 in 2 places, all below massif's threshold (01.00%)
+       n1: 3584 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n0: 3584 in 2 places, all below massif's threshold (01.00%)
+     n0: 0 in 1 place, below massif's threshold (01.00%)
+   n0: 512 in 2 places, all below massif's threshold (01.00%)
+ n0: 332 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=62
+#-----------
+time=7165658
+mem_heap_B=221324
+mem_heap_extra_B=120876
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=7225238
+mem_heap_B=223372
+mem_heap_extra_B=120908
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=7284858
+mem_heap_B=225420
+mem_heap_extra_B=120940
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=7344434
+mem_heap_B=227468
+mem_heap_extra_B=120972
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=7404721
+mem_heap_B=229836
+mem_heap_extra_B=121004
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=7464301
+mem_heap_B=231884
+mem_heap_extra_B=121036
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=7523905
+mem_heap_B=233932
+mem_heap_extra_B=121068
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=7583485
+mem_heap_B=235980
+mem_heap_extra_B=121100
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=7643077
+mem_heap_B=238028
+mem_heap_extra_B=121132
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=7702673
+mem_heap_B=240076
+mem_heap_extra_B=121164
+mem_stacks_B=0
+heap_tree=detailed
+n4: 240076 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 100000 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 100000 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 100000 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 100000 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 100000 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 100000 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 39424 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n2: 39424 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 38912 0x80493F0: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_push_back_aux(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n3: 38912 0x8048D76: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::push_back(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 20992 0x804C617: RecursivePreorder<int>::visitExternal(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n2: 20992 0x8049841: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 12800 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 12800 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n2: 12800 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n1: 7680 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+           n1: 7680 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+            n2: 7680 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+             n1: 5120 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+              n0: 5120 in 2 places, all below massif's threshold (01.00%)
+             n0: 2560 in 1 place, below massif's threshold (01.00%)
+          n1: 5120 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+           n1: 5120 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+            n1: 5120 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+             n0: 5120 in 2 places, all below massif's threshold (01.00%)
+       n2: 8192 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 7168 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n2: 7168 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n1: 4608 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+           n1: 4608 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+            n1: 4608 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+             n0: 4608 in 2 places, all below massif's threshold (01.00%)
+          n0: 2560 in 1 place, below massif's threshold (01.00%)
+        n0: 1024 in 1 place, below massif's threshold (01.00%)
+     n1: 17920 0x804C635: RecursivePreorder<int>::visitLeft(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n2: 17920 0x804985F: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 11264 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n2: 11264 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 8704 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n1: 8704 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+           n2: 8704 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+            n1: 5120 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+             n0: 5120 in 2 places, all below massif's threshold (01.00%)
+            n0: 3584 in 1 place, below massif's threshold (01.00%)
+         n0: 2560 in 1 place, below massif's threshold (01.00%)
+       n2: 6656 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 4608 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 4608 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n1: 4608 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+           n0: 4608 in 2 places, all below massif's threshold (01.00%)
+        n0: 2048 in 1 place, below massif's threshold (01.00%)
+     n0: 0 in 1 place, below massif's threshold (01.00%)
+   n0: 512 in 2 places, all below massif's threshold (01.00%)
+ n0: 652 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=72
+#-----------
+time=7734928
+mem_heap_B=241100
+mem_heap_extra_B=121180
+mem_stacks_B=0
+heap_tree=peak
+n4: 241100 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 100000 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 100000 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 100000 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 100000 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 100000 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 100000 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 40448 0x804A31C: __gnu_cxx::new_allocator<BinaryTree<int>::Node*>::allocate(unsigned int, void const*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n2: 40448 0x8049B7F: std::_Deque_base<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_allocate_node() (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n1: 39936 0x80493F0: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::_M_push_back_aux(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+    n3: 39936 0x8048D76: std::deque<BinaryTree<int>::Node*, std::allocator<BinaryTree<int>::Node*> >::push_back(BinaryTree<int>::Node* const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+     n1: 21504 0x804C617: RecursivePreorder<int>::visitExternal(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n2: 21504 0x8049841: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 12800 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 12800 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n2: 12800 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n1: 7680 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+           n1: 7680 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+            n2: 7680 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+             n1: 5120 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+              n0: 5120 in 2 places, all below massif's threshold (01.00%)
+             n0: 2560 in 1 place, below massif's threshold (01.00%)
+          n1: 5120 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+           n1: 5120 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+            n1: 5120 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+             n0: 5120 in 2 places, all below massif's threshold (01.00%)
+       n2: 8704 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 7680 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n2: 7680 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n1: 4608 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+           n1: 4608 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+            n1: 4608 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+             n0: 4608 in 2 places, all below massif's threshold (01.00%)
+          n0: 3072 in 1 place, below massif's threshold (01.00%)
+        n0: 1024 in 1 place, below massif's threshold (01.00%)
+     n1: 18432 0x804C635: RecursivePreorder<int>::visitLeft(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+      n2: 18432 0x804985F: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+       n1: 11264 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n2: 11264 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 8704 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n1: 8704 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+           n2: 8704 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+            n1: 5120 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+             n0: 5120 in 2 places, all below massif's threshold (01.00%)
+            n0: 3584 in 1 place, below massif's threshold (01.00%)
+         n0: 2560 in 1 place, below massif's threshold (01.00%)
+       n2: 7168 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+        n1: 4608 0x8049879: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+         n1: 4608 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+          n1: 4608 0x80498AC: EulerTour<int>::eulerTour(BinaryTree<int>::Node*) (in /home/ugrads/p/prock/git/221/project3/a.out)
+           n0: 4608 in 2 places, all below massif's threshold (01.00%)
+        n0: 2560 in 1 place, below massif's threshold (01.00%)
+     n0: 0 in 1 place, below massif's threshold (01.00%)
+   n0: 512 in 2 places, all below massif's threshold (01.00%)
+ n0: 652 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=73
+#-----------
+time=7788209
+mem_heap_B=184120
+mem_heap_extra_B=111000
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=7841502
+mem_heap_B=166060
+mem_heap_extra_B=100156
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=7894795
+mem_heap_B=148000
+mem_heap_extra_B=89312
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=7948111
+mem_heap_B=129920
+mem_heap_extra_B=78456
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=8001414
+mem_heap_B=111860
+mem_heap_extra_B=67620
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=8054738
+mem_heap_B=93780
+mem_heap_extra_B=56772
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=8108074
+mem_heap_B=75700
+mem_heap_extra_B=45916
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=8161367
+mem_heap_B=57640
+mem_heap_extra_B=35080
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=8214703
+mem_heap_B=39560
+mem_heap_extra_B=24232
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=8267998
+mem_heap_B=21500
+mem_heap_extra_B=13396
+mem_stacks_B=0
+heap_tree=detailed
+n3: 21500 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 10840 0x8048E17: BinaryTree<int>::insertLeft(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 10840 0x804898F: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 10840 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n1: 10640 0x8048EC9: BinaryTree<int>::insertRight(BinaryTree<int>::Node*, int const&) (in /home/ugrads/p/prock/git/221/project3/a.out)
+  n1: 10640 0x80489D7: generateCompleteTree(int) (in /home/ugrads/p/prock/git/221/project3/a.out)
+   n0: 10640 0x8048AF1: main (in /home/ugrads/p/prock/git/221/project3/a.out)
+ n0: 20 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=83
+#-----------
+time=8321281
+mem_heap_B=3440
+mem_heap_extra_B=2152
+mem_stacks_B=0
+heap_tree=empty
