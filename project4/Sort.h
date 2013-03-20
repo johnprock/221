@@ -7,6 +7,13 @@
 #include "UnsortedSeqPriorityQueue.h"
 #include "HeapPriorityQueue.h"
 
+template<typename PQ>
+class PriorityQueueSort{
+  typedef typename PQ::ItemPair::element_type Object;
+  public:
+    void sort(NodeSequence<Object>& s){
+    }
+};
 
 template <typename Object, typename Comp>
 class InsertionSort
@@ -70,7 +77,7 @@ sort(NodeSequence<Object>& S) {				// sort S
 
 //============= Quick Sort =============
 
-template <typename Object, typename Comp>
+template <typename Object, typename Comp, template<typename> class Pivot>
 class QuickSort {					// QuickSort class
 protected:
   Comp comp;
@@ -80,11 +87,12 @@ public:
   void sort(VectorSequence<Object>& S);				// main entry point
 };
 
-template <typename Object, typename Comp>
-void QuickSort<Object, Comp>:: 			// recursive portion
+template <typename Object, typename Comp, template<typename> class Pivot>
+void QuickSort<Object, Comp, Pivot>:: 			// recursive portion
 quickSortStep(VectorSequence<Object>& S, int leftBound, int rightBound) {
   if (leftBound >= rightBound) return;			// 0 or 1 elements
-  Object pivot = S.atRank(rightBound).element();	// select last as pivot
+  Pivot<Object> p;
+  Object pivot = p.SelectPivot(S, leftBound, rightBound);	// select last as pivot
   int leftIndex = leftBound; 				// will scan rightward
   int rightIndex = rightBound - 1;			// will scan leftward
   while (leftIndex <= rightIndex) {
@@ -115,12 +123,46 @@ quickSortStep(VectorSequence<Object>& S, int leftBound, int rightBound) {
   quickSortStep(S, leftIndex+1, rightBound);
 }
 
-template <typename Object, typename Comp>
-void QuickSort<Object, Comp>::
+template <typename Object, typename Comp, template<typename> class Pivot>
+void QuickSort<Object, Comp, Pivot>::
 sort(VectorSequence<Object>& S) {				// main entry point
   if (S.size() <= 1) return;				// 0 or 1 elements
   quickSortStep(S, 0, S.size()-1);			// call sort utility
 }
+
+template<class Object>
+struct PivotLast{
+  Object SelectPivot(VectorSequence<Object>& s, int leftBound, int rightBound){
+    return s.atRank(rightBound).element();	// select last as pivot
+  }
+};
+
+template <typename Object, typename Comp>
+class QuickSortLast : public QuickSort<Object, Comp, PivotLast>{};
+
+template<class Object>
+struct PivotMedian{
+  Object SelectPivot(VectorSequence<Object>& s, int leftBound, int rightBound){
+    //////////////////////////////////////////////////////////////////
+    //Implement Median Pivot Selection Here
+    //////////////////////////////////////////////////////////////////
+  }
+};
+
+template <typename Object, typename Comp>
+class QuickSortMedian : public QuickSort<Object, Comp, PivotMedian>{};
+
+template<class Object>
+struct PivotRandom{
+  Object SelectPivot(VectorSequence<Object>& s, int leftBound, int rightBound){
+    //////////////////////////////////////////////////////////////////
+    //Implement Random Pivot Selection Here
+    //////////////////////////////////////////////////////////////////
+  }
+};
+
+template <typename Object, typename Comp>
+class QuickSortRandom : public QuickSort<Object, Comp, PivotRandom>{};
 
 
 //============= Radix Sort =============

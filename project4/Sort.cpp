@@ -1,9 +1,10 @@
-#include "Sort.h"
 #include <iostream>
-using namespace std;
+#include "Sort.h"
 
-int main(){
-  cout << "hello" << endl;
+int main() {
+
+  std::cout << '\n';
   return 0;
+
 }
 

@@ -37,7 +37,7 @@ struct CompWrapper
 template <typename Key, typename Element, typename Comp>
 class HeapPriorityQueue { 
 protected: 						// typename shortcuts
-  typedef Item<Key, Element>	    Item_t; 		// (key, element) pair
+  typedef Item<Key, Element>	    ItemPair; 		// (key, element) pair
 private: 						// member data
   Comp	      comp;					// comparator
   std::vector<Element> v;
