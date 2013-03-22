@@ -3,12 +3,20 @@
 #include "Comparator.h"
 #include "SortedSeqPriorityQueue.h" 
 
+using namespace std;
+
 int main() {
 
-  SortedSeqPriorityQueue<int,int,Comp> s();
-  s.insertItem(1,1);
+  
+  InsertionSort<int, Comp> s;
+  NodeSequence<int> n;
+  n.insertFirst(0);
+  n.insertFirst(1);
+  n.insertFirst(-1);
+  s.sort(n);
+
+  cout << n;
 
   return 0;
-
 }
 

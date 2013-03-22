@@ -6,23 +6,24 @@
 #include "SortedSeqPriorityQueue.h"
 #include "UnsortedSeqPriorityQueue.h"
 #include "HeapPriorityQueue.h"
+#include <stdlib.h>
 
 template<typename PQ>
 class PriorityQueueSort{
   typedef typename PQ::ItemPair::element_type Object;
   public:
     void sort(NodeSequence<Object>& s){
-      PQ p(); 
+      PQ p; 
       while(!s.isEmpty()) {
         Object e = s.first().element();
-       // s.removeAtRank(0);
+        s.removeAtRank(0);
         p.insertItem(e,e);
       }
-    //  while(!p.isEmpty()) {
-    //    Object e = p.minElement();
-    //    p.removeMin();
-    //    s.insertLast(e);
-    //  }
+      while(!p.isEmpty()) {
+        Object e = p.minElement();
+        p.removeMin();
+        s.insertLast(e);
+      }
     }
 };
 
@@ -155,10 +156,14 @@ class QuickSortLast : public QuickSort<Object, Comp, PivotLast>{};
 template<class Object>
 struct PivotMedian{
   Object SelectPivot(VectorSequence<Object>& s, int leftBound, int rightBound){
-    //////////////////////////////////////////////////////////////////
-    //Implement Median Pivot Selection Here
-    //////////////////////////////////////////////////////////////////
-  }
+    int d = rightBound - leftBound;
+    if(d%2 = 0) { // d is even
+     return s.atRank(leftBound + d/2).element();
+    }
+   else {
+     return s.atRank(leftBound + (d+1)/2).element();
+    }
+   }
 };
 
 template <typename Object, typename Comp>
@@ -167,9 +172,8 @@ class QuickSortMedian : public QuickSort<Object, Comp, PivotMedian>{};
 template<class Object>
 struct PivotRandom{
   Object SelectPivot(VectorSequence<Object>& s, int leftBound, int rightBound){
-    //////////////////////////////////////////////////////////////////
-    //Implement Random Pivot Selection Here
-    //////////////////////////////////////////////////////////////////
+    int d = rightBound - leftBound; 
+    return rand()%d + rightBound;
   }
 };
 
