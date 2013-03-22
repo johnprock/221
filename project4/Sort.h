@@ -157,7 +157,7 @@ template<class Object>
 struct PivotMedian{
   Object SelectPivot(VectorSequence<Object>& s, int leftBound, int rightBound){
     int d = rightBound - leftBound;
-    if(d%2 = 0) { // d is even
+    if(d%2 == 0) { // d is even
      return s.atRank(leftBound + d/2).element();
     }
    else {
@@ -172,8 +172,9 @@ class QuickSortMedian : public QuickSort<Object, Comp, PivotMedian>{};
 template<class Object>
 struct PivotRandom{
   Object SelectPivot(VectorSequence<Object>& s, int leftBound, int rightBound){
-    int d = rightBound - leftBound; 
-    return rand()%d + rightBound;
+    srand((unsigned)time(0));
+    int d = rightBound - leftBound;
+    return leftBound + int((d * rand()) / (RAND_MAX + 1.0));
   }
 };
 

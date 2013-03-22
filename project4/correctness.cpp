@@ -7,7 +7,8 @@
 
 using namespace std;
 
-bool IsSorted(NodeSequence<int>& n){
+template<template<typename> class Seq>
+bool IsSorted(Seq<int>& n){
   for(int i = 0; i<n.size()-1; i++){
     if(n.elemAtRank(i) > n.elemAtRank(i+1))
         return false;
@@ -15,10 +16,10 @@ bool IsSorted(NodeSequence<int>& n){
   return true;
 }
 
-template<template<typename, typename> class Sort>
+template<template<typename, typename> class Sort, template<typename> class Seq>
 bool TestSort(string name){
   
-  NodeSequence<int> rnd, ord, rord;
+  Seq<int> rnd, ord, rord;
   
   for(size_t i = 0; i<100; i++){
     int r = rand();
@@ -52,13 +53,13 @@ bool TestSort(string name){
 int main(){
 
   bool passed = true;
-  if(!TestSort<InsertionSort>("InsertionSort"))
+  if(!TestSort<InsertionSort, NodeSequence>("InsertionSort"))
     passed = false;
-  if(!TestSort<SelectionSort>("SelectionSort"))
+  if(!TestSort<SelectionSort, NodeSequence>("SelectionSort"))
     passed = false;
-  if(!TestSort<QuickSortMedium>("QuickSortMedium"))
+  if(!TestSort<QuickSortMedian, VectorSequence>("QuickSortMedium"))
     passed = false;
-  if(!TestSort<QuickSortRandom>("QuickSortRandom"))
+  if(!TestSort<QuickSortRandom, VectorSequence>("QuickSortRandom"))
     passed = false;
   
   if(passed)
