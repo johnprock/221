@@ -9,11 +9,18 @@ using namespace std;
 
 template<template<typename> class Seq>
 bool IsSorted(Seq<int>& n){
+  cout << "List of n " << n.size() << " elements" << endl;
+  cout << n.elemAtRank(0) << " ";
+  bool passed = true;
   for(int i = 0; i<n.size()-1; i++){
+    cout << n.elemAtRank(i+1) << " ";
     if(n.elemAtRank(i) > n.elemAtRank(i+1))
-        return false;
+      passed = false;
+    if(n.elemAtRank(i) == n.elemAtRank(i+1))
+      passed = false;
   }
-  return true;
+  cout << endl << endl;
+  return passed;
 }
 
 template<template<typename, typename> class Sort, template<typename> class Seq>
@@ -60,6 +67,8 @@ int main(){
   if(!TestSort<QuickSortMedian, VectorSequence>("QuickSortMedium"))
     passed = false;
   if(!TestSort<QuickSortRandom, VectorSequence>("QuickSortRandom"))
+    passed = false;
+  if(!TestSort<QuickSortLast, VectorSequence>("QuickSortLast"))
     passed = false;
   
   if(passed)

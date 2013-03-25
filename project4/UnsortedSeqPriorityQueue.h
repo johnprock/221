@@ -30,51 +30,48 @@ public:
     if (S.isEmpty())
       throw EmptyContainerException("Minimum element of empty queue");
 
-    Position curr = S.first();			// start search
-    Key k = curr.element().key();
+    Position curr = S.first(), minp = curr;			// start search
     while (!S.isLast(curr))
     {
-      if (comp(k, key(curr)) > 0)
-        k = curr.element().key();
+      if (comp(key(minp), key(curr)) > 0)
+        minp = curr;
         
       curr = S.after(curr);
     }
 
-    return curr.element().element();
+    return (comp(key(minp), key(curr)) > 0 ? curr : minp).element().element();
   }
   const Key& minKey() const     			// returns minimum key
       throw(EmptyContainerException) {
     if (S.isEmpty())
       throw EmptyContainerException("Minimum key of empty queue");
 
-    Position curr = S.first();			// start search
-    Key k = curr.element().key();
+    Position curr = S.first(), minp;			// start search
     while (!S.isLast(curr))
     {
-      if (comp(k, key(curr)) > 0)
-        k = curr.element().key();
+      if (comp(key(minp), key(curr)) > 0)
+        minp = curr;
         
       curr = S.after(curr);
     }
 
-    return curr.element().key();
+    return (comp(key(minp), key(curr)) > 0 ? curr : minp).element().key();
   }
   void removeMin()					// remove minimum
       throw(EmptyContainerException) {
     if (S.isEmpty())
       throw EmptyContainerException("Removal from empty queue");
 
-    Position curr = S.first();			// start search
-    Key k = curr.element().key();
+    Position curr = S.first(), minp = curr;			// start search
     while (!S.isLast(curr))
     {
-      if (comp(k, key(curr)) > 0)
-        k = curr.element().key();
+      if (comp(key(minp), key(curr)) > 0)
+        minp = curr;
         
       curr = S.after(curr);
     }
 
-    S.remove(curr);
+    S.remove(comp(key(minp), key(curr)) > 0 ? curr : minp);
   }
 };
 #endif
