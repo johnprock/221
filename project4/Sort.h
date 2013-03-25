@@ -156,8 +156,34 @@ class QuickSortLast : public QuickSort<Object, Comp, PivotLast>{};
 struct PivotMedian{
   template<typename Seq, typename Comp>
   int SelectPivot(Seq& s, int leftBound, int rightBound, Comp& c){
-    int mid = (leftBound+rightBound)/2;
-    return mid;
+    int l = leftBound;
+    int r = rightBound;
+    int m = (leftBound + rightBound)/2;
+   
+    if(c(s.elemAtRank(l),s.elemAtRank(m))<=0 &&
+        c(s.elemAtRank(m),s.elemAtRank(r))<=0) {
+      return m;
+    }
+    if(c(s.elemAtRank(l),s.elemAtRank(r))<=0 &&
+        c(s.elemAtRank(r),s.elemAtRank(m))<=0) {
+      return r;
+    }
+    if(c(s.elemAtRank(r),s.elemAtRank(m))<=0 &&
+        c(s.elemAtRank(m),s.elemAtRank(l))<=0) {
+      return m;
+    }
+    if(c(s.elemAtRank(r),s.elemAtRank(l))<=0 &&
+        c(s.elemAtRank(l),s.elemAtRank(m))<=0) {
+      return l;
+    }
+    if(c(s.elemAtRank(m),s.elemAtRank(r))<=0 &&
+        c(s.elemAtRank(r),s.elemAtRank(l))<=0) {
+      return r;
+    }
+    if(c(s.elemAtRank(m),s.elemAtRank(l))<=0 &&
+        c(s.elemAtRank(l),s.elemAtRank(r))<=0) {
+      return l;
+    }
   }
 };
 
