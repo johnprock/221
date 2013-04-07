@@ -23,6 +23,38 @@ VectorSequence<int> gen_random_vect(int size) {
   return vs;
 }
 
+NodeSequence<int> gen_reverse_node(int size) {
+  NodeSequence<int> ns;
+  for(int i=0; i<size; i++) {
+    ns.insertFirst(i);
+  }
+  return ns;
+}
+
+VectorSequence<int> gen_reverse_vect(int size) {
+  VectorSequence<int> vs;
+  for(int i=0; i<size; i++) {
+    vs.insertFirst(i);
+  }
+  return vs;
+}
+
+NodeSequence<int> gen_sorted_node(int size) {
+  NodeSequence<int> ns;
+  for(int i=0; i<size; i++) {
+    ns.insertLast(i);
+  }
+  return ns;
+}
+
+VectorSequence<int> gen_sorted_vect(int size) {
+  VectorSequence<int> vs;
+  for(int i=0; i<size; i++) {
+    vs.insertLast(i);
+  }
+  return vs;
+}
+
 clock_t test(int sort, int inp, int size) { // times a given sort and input
 
   InsertionSort<int, Comp>    ins;
@@ -43,6 +75,14 @@ clock_t test(int sort, int inp, int size) { // times a given sort and input
     case 1: 
       ns = gen_random_node(size);
       vs = gen_random_vect(size);
+      break;
+    case 2:
+      ns = gen_reverse_node(size);
+      vs = gen_reverse_vect(size);
+      break;
+    case 3:
+      ns = gen_sorted_node(size);
+      vs = gen_sorted_vect(size);
       break;
   }
 
@@ -68,10 +108,17 @@ clock_t test(int sort, int inp, int size) { // times a given sort and input
 int main(int argc, char* argv[]) {
 
   int size = atoi(argv[1]);
+  int sort = atoi(argv[2]);
+  int type = atoi(argv[3]);
 
-  test(1,1,size); 
-  cout << '\n';
-
+  for(int i=100; i<size; i+=100) {
+    cout << i << ";";
+    test(sort,type,i);
+    cout << endl;
+  }
+    cout << endl;
+  
+  
 }
 
 
