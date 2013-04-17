@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cassert>
 
-#include "GraphWMatVer.h"
-//#include "Graph.h"
+//#include "GraphWMatVer.h"
+#include "Graph.h"
 
 void print(Graph<double,double>::Vertex* v)
 {

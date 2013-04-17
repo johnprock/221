@@ -1,5 +1,4 @@
-#ifndefd
-GRAPH_H
+#ifndef GRAPH_H
 #define GRAPH_H
 
 #include <list>
@@ -8,6 +7,8 @@ GRAPH_H
 #include <algorithm>
 #include <cmath>
 #include <string>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -71,7 +72,8 @@ class Graph{
 
       vector<Vertex*> vertex;
 
-      unsigned int counter;
+      unsigned int vcounter; //tracks number of verticies
+      unsigned int ecounter; //tracks number of edges
 
    public:
       /////////////////////////////////////////////////////////////////////////
@@ -121,23 +123,29 @@ class Graph{
 
 template<typename Object,typename Weight>
 Graph<Object,Weight>::Graph(){
-
+  edge = new vector<Edge*>();
+  vertex = new vector<Vertex*>();
+  vcounter = 0;
+  ecounter = 0;
 }
 
 template<typename Object,typename Weight>
 Graph<Object,Weight>::Graph(Graph<Object,Weight>& G){
-   //copy vertices
-   //copy edges
+
+  std::map<typename vector<typename Graph<Object,Weight>::Vertex*, typename
+    Graph<Object, Weoght>::Vertex*> vertex_mapping;
 }
 
 template<typename Object,typename Weight>
 Graph<Object,Weight>::~Graph(){
-
+  delete edge;
+  delete vertex;
 }
 
 template<typename Object,typename Weight> 
 void Graph<Object,Weight>::reset(){
-   counter = 0;
+   vcounter = 0;
+   ecounter = 0;
    resetBack();
    resetValues();
    resetLevels();
@@ -172,17 +180,21 @@ void Graph<Object,Weight>::resetConnectedComponents(){
 
 template<typename Object,typename Weight>
 vector<typename Graph<Object,Weight>::Edge*> Graph<Object,Weight>::incidentEdges(Vertex* v){
-   
+  return v->inedge;   
 }
 
 template<typename Object,typename Weight>
 vector<typename Graph<Object,Weight>::Edge*> Graph<Object,Weight>::outgoingEdges(Vertex* v){
+  return v->edge;
 }
 
 template<typename Object,typename Weight>
 vector<typename Graph<Object,Weight>::Vertex*> Graph<Object,Weight>::incidentVertices(Vertex* v){
    vector<Vertex*> result;
    //fill result
+   for(int i=0; i<v->edge.size(); i++) {
+     result.push_back(v->inedge[i]->start);
+   }
    return result;
 }
 
@@ -190,6 +202,9 @@ template<typename Object,typename Weight>
 vector<typename Graph<Object,Weight>::Vertex*> Graph<Object,Weight>::adjacentVertices(Vertex* v){
    vector<Vertex*> result;
    //fill result
+   for(int i=0; i<v->edge.size(); i++) {
+    result.push_back(v->edge[i]->end);
+   }
    return result;
 }
 
@@ -230,38 +245,66 @@ bool Graph<Object,Weight>::isAdjacent(Vertex* v,Vertex* w){
 
 template<typename Object,typename Weight>
 typename Graph<Object,Weight>::Vertex* Graph<Object,Weight>::insertVertex(Object o){
+  Vertex* v = new Vertex(o);
+  vertex.push_back(v);
+  vcounter++;
+  return v;
 }
 
 template<typename Object,typename Weight>
 void Graph<Object,Weight>::insertEdge(Vertex* v,Vertex* w,Weight t){
+  Edge* e = new Edge(v,w,t);
+  edge.push_back(e);
+  ecounter++;
 }
 
 template<typename Object,typename Weight>
 void Graph<Object,Weight>::removeEdge(Edge* e){
+  // find and erase e
+  for(int i=0; i<edge.size(); i++) {
+    if(edge[i] == e) {
+      edge.erase(i);
+      ecounter--;
+    }
+  }
 }
 
 template<typename Object,typename Weight>
 void Graph<Object,Weight>::insertUndirectedEdge(Vertex* v,Vertex* w,Weight t){
+  Edge* e1 = new Edge(v,w,t);
+  Edge* e2 = new Edge(w,v,t);
+  edge.push_back(e1);
+  edge.push_back(e2);
 }
 
 template<typename Object,typename Weight>
 void Graph<Object,Weight>::removeVertex(Vertex* v){
+  for(int i=0; i<vertex.size(); i++) {
+    if(vertex[i] == v) {
+      vertex.erase(i);
+      vcounter--;
+    }
+  }
 }
 
 template<typename Object,typename Weight>
 unsigned int Graph<Object,Weight>::numVertices(){
+  return vcounter;
 }
 
 template<typename Object,typename Weight>
 unsigned int Graph<Object,Weight>::numEdges(){
+  return ecounter;
 }
 
 template<typename Object,typename Weight>
 vector<typename Graph<Object,Weight>::Vertex* > Graph<Object,Weight>::vertices(){
+  return vertex;
 }
 
 template<typename Object,typename Weight>
 vector<typename Graph<Object,Weight>::Edge* > Graph<Object,Weight>::edges(){
+  return edge;
 }
 
 template<typename Object,typename Weight>
@@ -277,11 +320,11 @@ void Graph<Object,Weight>::print(){
 template<typename Object, typename Weight>
 void Graph<Object,Weight>::read_file(std::string filename) {
   string data;
-  ifstream fs(filename);
-  
-  // read in number of verticies
-  if(fs.is_open()) {
-  }
+
+  ifstream infile;
+  infile.open(filename.c_str());
+
+
 }
 
 
