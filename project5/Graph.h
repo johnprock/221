@@ -9,6 +9,8 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <map>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -123,23 +125,49 @@ class Graph{
 
 template<typename Object,typename Weight>
 Graph<Object,Weight>::Graph(){
-  edge = new vector<Edge*>();
-  vertex = new vector<Vertex*>();
+  edge = vector<Edge*>();
+  vertex = vector<Vertex*>();
   vcounter = 0;
   ecounter = 0;
 }
 
+
 template<typename Object,typename Weight>
 Graph<Object,Weight>::Graph(Graph<Object,Weight>& G){
+ 
+  std::map<typename Graph<Object,Weight>::Vertex*, typename
+    Graph<Object, Weight>::Vertex*> vertex_mapping;
 
-  std::map<typename vector<typename Graph<Object,Weight>::Vertex*, typename
-    Graph<Object, Weoght>::Vertex*> vertex_mapping;
+  
+  // copy verticies
+  for(typename vector<typename Graph<Object,Weight>::Vertex*>::iterator it =
+      G.vertex.begin(); it != G.vertex.end(); ++it) {
+    Vertex* v = new Vertex(**it);
+    vertex_mapping[*it] = v;
+    vertex.push_back(v);
+
+  }
+
+  // copy edges
+  for(typename vector<typename Graph<Object,Weight>::Edge*>::iterator it =
+      G.edge.begin(); it != G.edge.end(); ++it)
+    insertEdge(vertex_mapping[(*it)->start], vertex_mapping[(*it)->end],
+        (*it)->weight);
+
+
+  vcounter = G.vcounter;
+  ecounter = G.ecounter;
 }
 
 template<typename Object,typename Weight>
 Graph<Object,Weight>::~Graph(){
-  delete edge;
-  delete vertex;
+  
+  for(int i=0; i<ecounter; i++) {
+    delete edge[i];
+  }
+  for(int i=0; i<vcounter; i++) {
+    delete vertex[i];
+  }
 }
 
 template<typename Object,typename Weight> 
@@ -237,7 +265,7 @@ typename Graph<Object,Weight>::Vertex* Graph<Object,Weight>::endVertex(Edge* e){
 template<typename Object,typename Weight>
 bool Graph<Object,Weight>::isAdjacent(Vertex* v,Vertex* w){
   for(int i=0; i< v->edge.size(); i++) {
-    if(v->edge[i].end = w)
+    if(v->edge[i]->end == w)
       return true;
   }
   return false;
@@ -323,8 +351,29 @@ void Graph<Object,Weight>::read_file(std::string filename) {
 
   ifstream infile;
   infile.open(filename.c_str());
+  
+  infile >> data;
+  vcounter = atoi(data.c_str());
+  
+  for(int i=0; i<vcounter; i++) {
+    vertex.push_back(new Vertex());
+  }
 
+  while(!infile.eof()) {
+    int v;
+    int w;
+    int weight;
+    infile >> data;
+    v = atoi(data.c_str());
+    infile >> data;
+    w = atoi(data.c_str());
+    infile >> data;
+    weight = atoi(data.c_str());
 
+    insertEdge(vertex[v],vertex[w],weight);
+  }
+
+  infile.close();
 }
 
 

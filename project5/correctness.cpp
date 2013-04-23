@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cassert>
+#include <fstream>
 
 //#include "GraphWMatVer.h"
 #include "Graph.h"
@@ -45,13 +46,6 @@ struct edge_equal
 };
 
 
-template<typename G>
-void test_graph(G& g)
-{
-  typedef G graph_type;
-
-}
-
 
 int main(int argc, char* argv[])
 {
@@ -60,7 +54,7 @@ int main(int argc, char* argv[])
   typedef Graph<vertex_property, edge_property> graph_type;
 
   const size_t n = 20;
-  graph_type g(n);
+  graph_type g;
 
   // test adding vertices and edges
   populate_complete(g, n);
@@ -161,6 +155,25 @@ int main(int argc, char* argv[])
   graph_type copy(g);
 
   assert(("Size of copy incorrect", g.numVertices() == copy.numVertices() && g.numEdges() == copy.numEdges()));
+
+
+  // test reading in from a file
+  
+  cout << "Testing file read.\n";
+  graph_type g_file;
+  cout << "Graph constructed\n";
+  std::string filename = "power.g";
+  
+  cout << "Reading in graph...\n";
+  g_file.read_file(filename);
+  cout << " done.\n";
+
+  ifstream stream;
+  stream.open(filename.c_str());
+  int num_vertices;
+  stream >> num_vertices;
+
+  assert(("Size of graph from file incorrect", num_vertices == g_file.numVertices()));
 
   std::cout << "All tests passed!" << std::endl;
 
