@@ -40,10 +40,13 @@ class Dset {
     }
 
     void unon(vertex* x, vertex* y) {
-      if(cloudMap[x] = cloudMap[y])
+      if(cloudMap[x] == cloudMap[y])
         return;
       else {
-        cloudMap[y] = x;
+        for(int i=0; i<clouds.size(); i++) {
+          if(cloudMap[clouds[i]] == cloudMap[y]) 
+            cloudMap[clouds[i]] = cloudMap[x];
+        }
       } 
     }
 
@@ -133,7 +136,7 @@ int main(int argc, char* argv[])
   typedef int edge_property;
   typedef Graph<vertex_property, edge_property> graph_type;
 
-  const size_t n = 3;
+  const size_t n = 2;
 
 #ifndef ADJMATRIX
    Graph<vertex_property, edge_property> g;
