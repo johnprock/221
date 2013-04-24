@@ -1,7 +1,5 @@
 #include <iostream>
 #include <map>
-#include <queue>
-#include <set>
 #include <vector>
 
 //#define ADJMATRIX
@@ -13,36 +11,15 @@
 
 using namespace std;
 
-
-
-
+//comparator used to sort edges
 template<typename G>
-class Tree {
-
+class Comp {
+  typedef typename G::Edge edge;
   public:
-
-  class Node {
-    
-    public:
-      G val;
-      vector<Node*> children;
-      Node* parent;
-  
-      Node(G x) {
-        val = x;
-        parent = NULL;
-      }
-      
-      void setParent(Node* n) {
-        parent = n;
-      }
-  };
-
-  Node* root;
-
-  Tree(G x) {
-    root = new Node(x);
+  bool operator() (edge* a, edge* b) {
+    return (a->weight < b->weight);
   }
+
 };
 
 
@@ -50,33 +27,30 @@ class Tree {
 template<typename G>
 class Dset {
 
-  typedef typename Tree<G>::Node node;   
+  typedef typename G::Vertex vertex;
 
   private: 
-    set<Tree<G> > trees;
+    vector<vertex*> clouds;  
+    map<vertex*, vertex*> cloudMap;
 
   public:
-    void makeSet(G x) {
-      Tree<G> tree(x);
-      tree.root->setParent(new typename Tree<G>::Node(x));
-      trees.insert(tree);
+    void makeSet(vertex* x) {
+      cloudMap[x] = x;
+      clouds.push_back(x); 
     }
 
-    G find(typename Tree<G>::Node* x) {
-      if(x->parent->val == x->val) {
-        return x->val;
-      }
+    void unon(vertex* x, vertex* y) {
+      if(cloudMap[x] = cloudMap[y])
+        return;
       else {
-        return find(x->parent);
-      }
-
+        cloudMap[y] = x;
+      } 
     }
 
-    void unon(typename Tree<G>::Node* x, typename Tree<G>::Node* y) {
-      node* xRoot = new node(find(x));
-      node* yRoot = new node(find(y));
-      xRoot->setParent(yRoot);
+    vertex* find(vertex* x) {
+      return cloudMap[x];    
     }
+
 };
 
 
@@ -86,14 +60,34 @@ template<typename G>
 vector<typename G::Edge*>
 minimum_spanning_tree(G& g)
 {
+  typedef typename G::Vertex vertex;
   typedef typename G::Edge* edge_ptr_type;
   typedef std::vector<edge_ptr_type> vector_type; 
 
   vector_type mst;
+  Dset<G> clouds;
+  Comp<G> comp;
 
   // compute MST here
-  // Kruskal's Algorithm 
-    
+  // Kruskal's Algorithm
+  
+  // make a cloud 
+  vector<vertex*> vert = g.vertices();
+  vector<edge_ptr_type> edge = g.edges();
+  sort(edge.begin(), edge.end(), comp);
+
+  for(int i=0; i<vert.size(); i++) {
+    clouds.makeSet(vert[i]);
+  }
+
+  for(int i=0; i<edge.size(); i++) {
+    vertex* u = edge[i]->start;
+    vertex* v = edge[i]->end;
+    if(clouds.find(u) != clouds.find(v)) {
+      mst.push_back(edge[i]);
+      clouds.unon(u,v); 
+    }
+  }
 
 
   return mst;
