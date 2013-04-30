@@ -134,6 +134,7 @@ class Graph  {
       vector<Edge*> edges();
 
       void print();
+      void read_file(String filename);
       /////////////////////////////////////////////////////////////////////////
 
       typedef Object object_type;
@@ -459,6 +460,36 @@ void Graph<Object,Weight>::print(){
    }
 }
 
+template<typename Object, typename Weight>
+void Graph<Object,Weight>::read_file(std::string filename) {
+  string data;
+
+  ifstream infile;
+  infile.open(filename.c_str());
+  
+  infile >> data;
+  vcounter = atoi(data.c_str());
+  
+  for(int i=0; i<vcounter; i++) {
+    insertVertex(Object());
+  }
+
+  while(!infile.eof()) {
+    int v;
+    int w;
+    int weight;
+    infile >> data;
+    v = atoi(data.c_str());
+    infile >> data;
+    w = atoi(data.c_str());
+    infile >> data;
+    weight = atoi(data.c_str());
+
+    insertEdge(vertex[v],vertex[w],weight);
+  }
+
+  infile.close();
+}
 
 #endif
 

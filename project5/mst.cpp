@@ -1,6 +1,7 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <ctime>
 
 //#define ADJMATRIX
 #ifndef ADJMATRIX
@@ -130,13 +131,17 @@ void print_edges(Vector const& v)
                      << (*it)->weight << std::endl;
 }
 
+
 int main(int argc, char* argv[])
 {
   typedef char vertex_property;
   typedef int edge_property;
   typedef Graph<vertex_property, edge_property> graph_type;
 
-  const size_t n = 2;
+  const size_t n = atoi(argv[1]);
+  clock_t start;
+  clock_t stop;
+
 
 #ifndef ADJMATRIX
    Graph<vertex_property, edge_property> g;
@@ -147,16 +152,14 @@ int main(int argc, char* argv[])
   // add vertices and edges
   populate_mesh(g, n);
    
-  // print out graph
-  std::cout << "Graph:" << std::endl;
-  print_edges(g.edges());
-
+  start = clock();
   // compute MST
   std::vector<graph_type::Edge*> mst = minimum_spanning_tree(g);
+  stop = clock();
 
-  // print out MST
-  std::cout << "\nMST:" << std::endl;
-  print_edges(mst);
+  //print out time
+  cout << "Time taken for computation: " <<
+    ((double)(stop-start)/(CLOCKS_PER_SEC)) << endl; 
 
   return 0;
 }

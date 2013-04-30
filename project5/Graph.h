@@ -353,23 +353,17 @@ void Graph<Object,Weight>::read_file(std::string filename) {
   infile.open(filename.c_str());
   
   infile >> data;
-  vcounter = atoi(data.c_str());
-  
-  for(int i=0; i<vcounter; i++) {
-    vertex.push_back(new Vertex());
+  int vnum = atoi(data.c_str());
+
+  for(int i=0; i<vnum; i++) {
+    insertVertex(Object());
   }
 
   while(!infile.eof()) {
     int v;
     int w;
     int weight;
-    infile >> data;
-    v = atoi(data.c_str());
-    infile >> data;
-    w = atoi(data.c_str());
-    infile >> data;
-    weight = atoi(data.c_str());
-
+    infile >> v >> w >> weight;
     insertEdge(vertex[v],vertex[w],weight);
   }
 
