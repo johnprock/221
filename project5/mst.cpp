@@ -3,7 +3,7 @@
 #include <vector>
 #include <ctime>
 
-//#define ADJMATRIX
+#define ADJMATRIX
 #ifndef ADJMATRIX
 #include "Graph.h"
 #else
@@ -98,7 +98,7 @@ minimum_spanning_tree(G& g)
 }
 
 template<typename G>
-void populate_mesh(G& g, size_t n)
+void populate_mesh(G& g, size_t n, int density)
 {
   // add vertices
   for (size_t i = 0; i < n*n; ++i)
@@ -108,7 +108,7 @@ void populate_mesh(G& g, size_t n)
   vertices_type vert = g.vertices();
   
   // add edges
-  for (size_t i = 0; i < n*n; i++)
+  for (size_t i = 0; i < (n*n/density); i++)
   {
     size_t row_start = (i/n)*n;
     size_t x = (i - row_start + 1) + row_start;
@@ -150,7 +150,7 @@ int main(int argc, char* argv[])
 #endif
 
   // add vertices and edges
-  populate_mesh(g, n);
+  populate_mesh(g, n, 1);
    
   start = clock();
   // compute MST

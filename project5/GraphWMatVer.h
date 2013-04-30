@@ -134,7 +134,6 @@ class Graph  {
       vector<Edge*> edges();
 
       void print();
-      void read_file(String filename);
       /////////////////////////////////////////////////////////////////////////
 
       typedef Object object_type;
@@ -460,7 +459,9 @@ void Graph<Object,Weight>::print(){
    }
 }
 
-template<typename Object, typename Weight>
+
+
+/*template<typename Object, typename Weight>
 void Graph<Object,Weight>::read_file(std::string filename) {
   string data;
 
@@ -489,7 +490,7 @@ void Graph<Object,Weight>::read_file(std::string filename) {
   }
 
   infile.close();
-}
+}*/
 
 #endif
 
